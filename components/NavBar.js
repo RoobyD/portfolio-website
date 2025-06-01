@@ -45,13 +45,13 @@ export const NavBar = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
-              <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>Skills</Nav.Link>
               <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
+              <Nav.Link href="#about" className={activeLink === 'about' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('about')}>About</Nav.Link>
             </Nav>
             <span className="navbar-text">
               <div className="social-icon">
-                <a href="#"><img src={navIcon1} alt=""  style={{width: '40px', height: '40px'}}/></a>
-                <a href="#"><img src={navIcon2} alt="" style={{width: '40px', height: '40px'}}/></a>
+                <a href="https://www.linkedin.com/in/rooby-dartiny-99b89a256/"><img src={navIcon1} alt=""  style={{width: '40px', height: '40px'}}/></a>
+                <a href="https://github.com/RoobyD"><img src={navIcon2} alt="" style={{width: '40px', height: '40px'}}/></a>
                 <a href="#"><img src={navIcon3} alt="" style={{width: '40px', height: '40px'}} /></a>
               </div>
               <HashLink to='#connect'>

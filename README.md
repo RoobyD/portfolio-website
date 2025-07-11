@@ -1,12 +1,30 @@
-# React + Vite
+# Rooby Dartiny - Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio website showcasing my computer science projects and skills as I prepare to graduate in Spring 2026.
 
-Currently, two official plugins are available:
+## Built With
+- React
+- Tailwind CSS
+- Vite
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Responsive design for all devices
+- Interactive typing animations
+- Modern UI with smooth transitions
+- Project showcase
+- Skills and experience sections
 
-## Expanding the ESLint configuration
+## Projects Featured
+- WorkWell Pre-Screening System (Ruby on Rails, PostgreSQL)
+- Wild Sky Program Application (React, Node.js) - HackTCNJ Award Winner
+- Goat Scoring Database (Python, Flask, PostgreSQL)
+- And more...
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Contact
+- Email: rdartiny19@gmail.com
+- Alt Email: dartinr1@tcnj.edu
+- LinkedIn: [linkedin.com/in/rooby-dartiny-99b89a256/](https://linkedin.com/in/rooby-dartiny-99b89a256/)
+- GitHub: [github.com/RoobyD](https://github.com/RoobyD)
+
+---
+*Computer Science Student at The College of New Jersey | Graduating Spring 2026*

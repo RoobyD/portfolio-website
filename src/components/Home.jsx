@@ -6,7 +6,7 @@ const quotes = [
   'I fix a bug and wonder if I deserve a Nobel Prize!',
   'I go absolutely wild when Barcelona scores a goal!',
   'I like working out!',
-  'I playing FootBall(Soccer)!'
+  'I like playing FootBall(Soccer)!'
 ];
 
 const Home = () => {

@@ -10,7 +10,7 @@ const About = () => {
           <div>
             <h2 className="text-4xl md:text-5xl font-light mb-6">About Me</h2>
             <p className="text-lg font-light text-gray-300 leading-relaxed mb-6">
-              I'm a passionate computer science student and full-stack developer with a love for creating innovative solutions 
+              I'm a passionate computer science student with a love for creating innovative solutions 
               to complex problems. My journey in technology has been driven by curiosity and a desire to build applications 
               that make a meaningful impact.
             </p>

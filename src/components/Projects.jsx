@@ -3,25 +3,31 @@ import React from 'react';
 const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features include user authentication, payment processing, inventory management, and real-time order tracking.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
-      tags: ["React", "Node.js", "MongoDB", "Stripe"],
-      link: "#"
+      title: "WorkWell Pre-Screening & Registration System",
+      description: "A secure web application designed to help formerly incarcerated individuals pre-register for job-readiness programs. Built with Ruby on Rails and PostgreSQL, featuring role-based access control, dynamic forms, and accessible UI design to ensure privacy and ease of use for vulnerable populations.",
+      image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80",
+      tags: ["Ruby on Rails", "PostgreSQL", "Accessibility", "Community Impact"],
+      link: "#",
+      isPrivate: true,
+      impact: "Client-Based Nonprofit Project"
     },
     {
-      title: "AI-Powered Task Manager",
-      description: "An intelligent task management application that uses machine learning to prioritize tasks, predict completion times, and optimize workflow efficiency for teams and individuals.",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&q=80",
-      tags: ["Python", "TensorFlow", "React", "FastAPI"],
-      link: "#"
+      title: "Wild Sky Financial Estimation Tool",
+      description: "Award-winning web application that helps Montana ranchers estimate wildlife conservation incentives. Built with React and Node.js, this tool addresses real biodiversity challenges by making conservation financially accessible to ranchers across Montana's 56 counties.",
+      image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
+      tags: ["React", "Node.js", "Conservation", "Data Analysis"],
+      link: "https://devpost.com/software/wild-sky-financial-estimation-tool",
+      isPrivate: false,
+      impact: "HackTCNJ Social Impact Innovation Award Winner"
     },
     {
-      title: "Real-time Chat Application",
-      description: "A modern messaging platform with features like group chats, file sharing, video calls, and end-to-end encryption. Built with WebSocket technology for instant communication.",
-      image: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=800&q=80",
-      tags: ["Socket.io", "React", "Express", "WebRTC"],
-      link: "#"
+      title: "Goat Scoring Database System",
+      description: "Comprehensive database solution using PostgreSQL and Python to organize and manage agricultural data efficiently. Features automated data processing with Pandas, interactive Flask web interface, and robust SQL schemas for real-world data management challenges.",
+      image: "https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=800&q=80",
+      tags: ["PostgreSQL", "Python", "Flask", "Data Management"],
+      link: "#",
+      isPrivate: true,
+      impact: "Agricultural Data Solutions"
     }
   ];
 
@@ -37,6 +43,16 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div key={index} className={`grid md:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'md:grid-flow-col-dense' : ''}`}>
               <div className={`${index % 2 === 1 ? 'md:col-start-2' : ''}`}>
+                {/* Impact Badge */}
+                <div className="mb-4">
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-light bg-green-500/20 text-green-300 border border-green-500/30">
+                    <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    {project.impact}
+                  </span>
+                </div>
+                
                 <h3 className="text-2xl md:text-3xl font-light mb-4">{project.title}</h3>
                 <p className="text-lg font-light text-gray-300 leading-relaxed mb-6">
                   {project.description}
@@ -48,12 +64,25 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
-                <a
-                  href={project.link}
-                  className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors duration-300 font-light"
-                >
-                  View Project →
-                </a>
+                
+                {/* Project Link */}
+                {project.isPrivate ? (
+                  <div className="flex items-center text-gray-400">
+                    <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+                    </svg>
+                    <span className="font-light">Private Repository - Client Confidentiality</span>
+                  </div>
+                ) : (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors duration-300 font-light"
+                  >
+                    View Project →
+                  </a>
+                )}
               </div>
               <div className={`${index % 2 === 1 ? 'md:col-start-1' : ''}`}>
                 <div className="aspect-video rounded-2xl overflow-hidden bg-gray-800/50">

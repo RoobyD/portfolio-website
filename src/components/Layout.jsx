@@ -167,9 +167,28 @@ const Layout = ({ children }) => {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-gray-400 font-light">
           <p>© {new Date().getFullYear()} Rooby Dartiny. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white transition-colors duration-300">GitHub</a>
-            <a href="#" className="hover:text-white transition-colors duration-300">LinkedIn</a>
-            <a href="#" className="hover:text-white transition-colors duration-300">Email</a>
+            <a 
+              href="https://github.com/RoobyD" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors duration-300"
+            >
+              GitHub
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/rooby-dartiny-99b89a256/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors duration-300"
+            >
+              LinkedIn
+            </a>
+            <a 
+              href="mailto:dartinr1@tcnj.edu" 
+              className="hover:text-white transition-colors duration-300"
+            >
+              Email
+            </a>
           </div>
         </div>
       </footer>

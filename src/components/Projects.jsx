@@ -1,11 +1,14 @@
 import React from 'react';
+import goatPic from '../assets/images/projects/goat_pic.jpg';
+import bisonPic from '../assets/images/projects/bison_pic.jpg';
+import workwellPic from '../assets/images/projects/workwell_pic.png';
 
 const Projects = () => {
   const projects = [
     {
       title: "WorkWell Pre-Screening & Registration System",
       description: "A secure web application designed to help formerly incarcerated individuals pre-register for job-readiness programs. Built with Ruby on Rails and PostgreSQL, featuring role-based access control, dynamic forms, and accessible UI design to ensure privacy and ease of use for vulnerable populations.",
-      image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80",
+      image: workwellPic,
       tags: ["Ruby on Rails", "PostgreSQL", "Accessibility", "Community Impact"],
       link: "#",
       isPrivate: true,
@@ -13,17 +16,18 @@ const Projects = () => {
     },
     {
       title: "Wild Sky Financial Estimation Tool",
-      description: "Award-winning web application that helps Montana ranchers estimate wildlife conservation incentives. Built with React and Node.js, this tool addresses real biodiversity challenges by making conservation financially accessible to ranchers across Montana's 56 counties.",
-      image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
+      description: "Built and deployed a financial estimation tool using React and Node.js to help mobilize the American Prairie's Wild Sky program, educating and empowering Montana ranchers to adopt conservation strategies through monetary incentives. Involved extensive research on agricultural practices and regional biodiversity across Montana's 56 counties.",
+      image: bisonPic,
       tags: ["React", "Node.js", "Conservation", "Data Analysis"],
       link: "https://devpost.com/software/wild-sky-financial-estimation-tool",
       isPrivate: false,
-      impact: "HackTCNJ Social Impact Innovation Award Winner"
+      impact: "HackTCNJ Social Impact Innovation Award Winner",
+      imageCredit: "Photo by Dennis Lingohr, American Prairie"
     },
     {
       title: "Goat Scoring Database System",
       description: "Comprehensive database solution using PostgreSQL and Python to organize and manage agricultural data efficiently. Features automated data processing with Pandas, interactive Flask web interface, and robust SQL schemas for real-world data management challenges.",
-      image: "https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=800&q=80",
+      image: goatPic,
       tags: ["PostgreSQL", "Python", "Flask", "Data Management"],
       link: "#",
       isPrivate: true,
@@ -85,12 +89,18 @@ const Projects = () => {
                 )}
               </div>
               <div className={`${index % 2 === 1 ? 'md:col-start-1' : ''}`}>
-                <div className="aspect-video rounded-2xl overflow-hidden bg-gray-800/50">
+                <div className="aspect-video rounded-2xl overflow-hidden bg-gray-800/50 relative">
                   <img 
                     src={project.image} 
                     alt={project.title}
                     className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300"
                   />
+                  {/* Image Credit */}
+                  {project.imageCredit && (
+                    <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
+                      {project.imageCredit}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

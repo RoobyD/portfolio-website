@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
+import resume from '../assets/documents/resume.pdf';
 
 const Contact = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -31,7 +32,7 @@ const Contact = () => {
                 href="#"
                 className="px-8 py-3 border border-gray-600 text-gray-300 rounded-full font-light hover:border-white hover:text-white transition-colors duration-300"
               >
-                Download Resume
+                View Resume
               </a>
             </div>
           </div>
@@ -95,10 +96,12 @@ const Contact = () => {
               Get in Touch
             </button>
             <a
-              href="#"
+              href={resume}
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-3 border border-gray-600 text-gray-300 rounded-full font-light hover:border-white hover:text-white transition-colors duration-300"
             >
-              Download Resume
+              View Resume
             </a>
           </div>
         </div>

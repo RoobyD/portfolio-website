@@ -2,7 +2,7 @@ import React from 'react';
 import profilePic from '../assets/images/profile/profile_pic.jpg';
 
 const About = () => {
-  const skills = ['React', 'Node.js', 'Python', 'TypeScript', 'MongoDB', 'AWS'];
+  const skills = ["Python", "JavaScript", "HTML & CSS", "C++", "Java", "Swift", "Ruby", "SQL"];
 
   return (
     <section id="about" className="py-20 px-4 md:px-12">

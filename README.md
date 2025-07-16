@@ -2,29 +2,21 @@
 
 A modern, responsive portfolio website showcasing my computer science projects and skills as I prepare to graduate in Spring 2026.
 
+**Live Site**: [roobydartiny.com](https://roobydartiny.com)
+
 ## Built With
-- React
-- Tailwind CSS
-- Vite
+- **React** - Component-based UI framework
+- **Tailwind CSS** - Utility-first CSS framework
+- **Vite** - Fast build tool and development server
+- **Formspree** - Contact form handling
 
 ## Features
 - Responsive design for all devices
-- Interactive typing animations
-- Modern UI with smooth transitions
-- Project showcase
+- Interactive typing animations with personality
+- Modern UI with smooth transitions and space-themed aesthetics
+- Project showcase with real community-impact work
 - Skills and experience sections
+- Contact form integration
+- Social media links
 
-## Projects Featured
-- WorkWell Pre-Screening System (Ruby on Rails, PostgreSQL)
-- Wild Sky Program Application (React, Node.js) - HackTCNJ Award Winner
-- Goat Scoring Database (Python, Flask, PostgreSQL)
-- And more...
-
-## Contact
-- Email: rdartiny19@gmail.com
-- Alt Email: dartinr1@tcnj.edu
-- LinkedIn: [linkedin.com/in/rooby-dartiny-99b89a256/](https://linkedin.com/in/rooby-dartiny-99b89a256/)
-- GitHub: [github.com/RoobyD](https://github.com/RoobyD)
-
----
-*Computer Science Student at The College of New Jersey | Graduating Spring 2026*
+All projects focus on real-world impact and community benefit.

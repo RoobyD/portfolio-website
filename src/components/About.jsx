@@ -5,8 +5,11 @@ const About = () => {
   const skills = ["Python", "JavaScript", "HTML & CSS", "C++", "Java", "Swift", "Ruby", "SQL"];
 
   return (
-    <section id="about" className="py-20 px-4 md:px-12">
-      <div className="max-w-4xl mx-auto">
+    <section id="about" className="py-20 px-4 md:px-12 relative z-10">
+      {/* Space-themed background for readability */}
+      <div className="absolute inset-0 bg-black/85 backdrop-blur-sm"></div>
+      
+      <div className="max-w-4xl mx-auto relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-4xl md:text-5xl font-light mb-6">About Me</h2>

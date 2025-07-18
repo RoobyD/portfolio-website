@@ -16,7 +16,7 @@ const Projects = () => {
     },
     {
       title: "Wild Sky Financial Estimation Tool",
-      description: "Built and deployed a financial estimation tool using React and Node.js to help mobilize the American Prairie's Wild Sky program, educating and empowering Montana ranchers to adopt conservation strategies through monetary incentives. Involved extensive research on agricultural practices and regional biodiversity across Montana's 56 counties.",
+      description: "Engineered and deployed a financial estimation tool to help mobilize the American Prairie's Wild Sky program, educating and empowering Montana ranchers to adopt conservation strategies through monetary incentives. Involved extensive research on agricultural practices and regional biodiversity across Montana's 56 counties.",
       image: bisonPic,
       tags: ["React", "Node.js", "Conservation", "Data Analysis"],
       link: "https://devpost.com/software/wild-sky-financial-estimation-tool",
@@ -36,8 +36,11 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 px-4 md:px-12">
-      <div className="max-w-6xl mx-auto">
+    <section id="projects" className="py-20 px-4 md:px-12 relative z-10">
+      {/* Space-themed background for readability */}
+      <div className="absolute inset-0 bg-black/85 backdrop-blur-sm"></div>
+      
+      <div className="max-w-6xl mx-auto relative z-10">
         <h2 className="text-4xl md:text-5xl font-light mb-4 text-center">Featured Projects</h2>
         <p className="text-lg font-light text-gray-400 text-center mb-16 max-w-2xl mx-auto">
           Exploring the intersection of technology and innovation through practical solutions

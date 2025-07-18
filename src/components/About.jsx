@@ -11,7 +11,21 @@ const About = () => {
       
       <div className="max-w-4xl mx-auto relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
+          {/* Image First - Shows first on mobile, second on desktop */}
+          <div className="relative order-1 md:order-2">
+            <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-cyan-400/20 to-blue-500/20 p-1">
+              <img 
+                src={profilePic} 
+                alt="Rooby Dartiny"
+                className="w-full h-full object-cover rounded-xl"
+              />
+            </div>
+            {/* Optional: Add a subtle glow effect */}
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-400/10 to-blue-500/10 pointer-events-none"></div>
+          </div>
+          
+          {/* Text Second - Shows second on mobile, first on desktop */}
+          <div className="order-2 md:order-1">
             <h2 className="text-4xl md:text-5xl font-light mb-6">About Me</h2>
             <p className="text-lg font-light text-gray-300 leading-relaxed mb-6">
               I'm a passionate computer science student and full-stack developer with a love for creating innovative solutions 
@@ -30,17 +44,6 @@ const About = () => {
                 </span>
               ))}
             </div>
-          </div>
-          <div className="relative">
-            <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-cyan-400/20 to-blue-500/20 p-1">
-              <img 
-                src={profilePic} 
-                alt="Rooby Dartiny"
-                className="w-full h-full object-cover rounded-xl"
-              />
-            </div>
-            {/* Optional: Add a subtle glow effect */}
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-400/10 to-blue-500/10 pointer-events-none"></div>
           </div>
         </div>
       </div>

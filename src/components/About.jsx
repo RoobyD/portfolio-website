@@ -1,5 +1,5 @@
 import React from 'react';
-import profilePic from '../assets/images/profile/profile_pic.jpg';
+// import profilePic from '../assets/images/profile/profile_pic.jpg';
 
 const About = () => {
   const skills = ["Python", "JavaScript", "HTML & CSS", "C++", "Java", "Swift", "Ruby", "SQL"];

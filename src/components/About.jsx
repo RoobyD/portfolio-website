@@ -14,11 +14,11 @@ const About = () => {
           {/* Image First - Shows first on mobile, second on desktop */}
           <div className="relative order-1 md:order-2">
             <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-cyan-400/20 to-blue-500/20 p-1">
-              <img 
+              {/* <img 
                 src={profilePic} 
                 alt="Rooby Dartiny"
                 className="w-full h-full object-cover rounded-xl"
-              />
+              /> */}
             </div>
             {/* Optional: Add a subtle glow effect */}
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-400/10 to-blue-500/10 pointer-events-none"></div>

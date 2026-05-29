@@ -1,54 +1,53 @@
 import React from 'react';
-// import profilePic from '../assets/images/profile/profile_pic.jpg';
 
-const About = () => {
-  const skills = ["Python", "JavaScript", "HTML & CSS", "C++", "Java", "Swift", "Ruby", "SQL"];
+const skills = [
+  'Python', 'JavaScript', 'Ruby', 'SQL',
+  'C++', 'Swift', 'React', 'Node.js', 'Flask', 'PostgreSQL',
+];
 
-  return (
-    <section id="about" className="py-20 px-4 md:px-12 relative z-10">
-      {/* Space-themed background for readability */}
-      <div className="absolute inset-0 bg-black/85 backdrop-blur-sm"></div>
-      
-      <div className="max-w-4xl mx-auto relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Image First - Shows first on mobile, second on desktop */}
-          <div className="relative order-1 md:order-2">
-            <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-cyan-400/20 to-blue-500/20 p-1">
-              {/* <img 
-                src={profilePic} 
-                alt="Rooby Dartiny"
-                className="w-full h-full object-cover rounded-xl"
-              /> */}
-            </div>
-            {/* Optional: Add a subtle glow effect */}
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-400/10 to-blue-500/10 pointer-events-none"></div>
-          </div>
-          
-          {/* Text Second - Shows second on mobile, first on desktop */}
-          <div className="order-2 md:order-1">
-            <h2 className="text-4xl md:text-5xl font-light mb-6">About Me</h2>
-            <p className="text-lg font-light text-gray-300 leading-relaxed mb-6">
-              I'm a passionate computer science student and full-stack developer with a love for creating innovative solutions 
-              to complex problems. My journey in technology has been driven by curiosity and a desire to build applications 
-              that make a meaningful impact.
-            </p>
-            <p className="text-lg font-light text-gray-300 leading-relaxed mb-8">
-              When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, 
-              or capturing the world through my lens. I believe in the power of technology to connect people and solve 
-              real-world challenges.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              {skills.map((tech) => (
-                <span key={tech} className="px-4 py-2 bg-gray-800/50 text-gray-300 rounded-full text-sm font-light">
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
+const About = () => (
+  <section id="about" style={{ paddingBottom: '88px', position: 'relative' }}>
+    {/* Dark backdrop so text stays readable over the nature scene */}
+    <div style={{ position: 'absolute', inset: '-40px -24px', background: 'rgba(4,10,12,0.62)', backdropFilter: 'blur(1px)', zIndex: -1 }} />
+    <hr className="divider" style={{ marginBottom: '64px' }} />
+    <div className="label" style={{ marginBottom: '44px' }}>About</div>
+
+    <div
+      className="about-grid"
+      style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px' }}
+    >
+      <div>
+        <p style={{ color: 'var(--muted)', lineHeight: 1.85, marginBottom: '20px', fontSize: '15px' }}>
+          I'm a computer science student and full-stack developer who builds things
+          that matter. My work sits at the intersection of technology and real-world
+          impact — community access, conservation, and data.
+        </p>
+        <p style={{ color: 'var(--muted)', lineHeight: 1.85, fontSize: '15px' }}>
+          Currently at TCNJ, always looking for projects that push me further and
+          collaborations that go somewhere meaningful.
+        </p>
+      </div>
+
+      <div>
+        <div className="label" style={{ marginBottom: '20px' }}>Skills</div>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px 20px' }}>
+          {skills.map(s => (
+            <span
+              key={s}
+              style={{
+                fontFamily: "'JetBrains Mono', 'Courier New', monospace",
+                fontSize: '12px',
+                color: 'var(--muted)',
+                letterSpacing: '0.04em',
+              }}
+            >
+              {s}
+            </span>
+          ))}
         </div>
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default About;

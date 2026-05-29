@@ -1,123 +1,105 @@
-import React from 'react';
-import goatPic from '../assets/images/projects/goat_pic.jpg';
-import bisonPic from '../assets/images/projects/bison_pic.jpg';
-import workwellPic from '../assets/images/projects/workwell_pic.png';
+import React, { useState } from 'react';
 
-const Projects = () => {
-  const projects = [
-    {
-      title: "WorkWell Pre-Screening & Registration System",
-      description: "A secure web application designed to help formerly incarcerated individuals pre-register for job-readiness programs. Built with Ruby on Rails and PostgreSQL, featuring role-based access control, dynamic forms, and accessible UI design to ensure privacy and ease of use for vulnerable populations.",
-      image: workwellPic,
-      tags: ["Ruby on Rails", "PostgreSQL", "Accessibility", "Community Impact"],
-      link: "#",
-      isPrivate: true,
-      impact: "Client-Based Nonprofit Project"
-    },
-    {
-      title: "Wild Sky Financial Estimation Tool",
-      description: "Engineered and deployed a financial estimation tool to help mobilize the American Prairie's Wild Sky program, educating and empowering Montana ranchers to adopt conservation strategies through monetary incentives. Involved extensive research on agricultural practices and regional biodiversity across Montana's 56 counties.",
-      image: bisonPic,
-      tags: ["React", "Node.js", "Conservation", "Data Analysis"],
-      link: "https://devpost.com/software/wild-sky-financial-estimation-tool",
-      isPrivate: false,
-      impact: "HackTCNJ Social Impact Innovation Award Winner",
-      imageCredit: "Photo by Dennis Lingohr, American Prairie"
-    },
-    {
-      title: "Goat Scoring Database System",
-      description: "Comprehensive database solution using PostgreSQL and Python to organize and manage agricultural data efficiently. Features automated data processing with Pandas, interactive Flask web interface, and robust SQL schemas for real-world data management challenges.",
-      image: goatPic,
-      tags: ["PostgreSQL", "Python", "Flask", "Data Management"],
-      link: "#",
-      isPrivate: true,
-      impact: "Agricultural Data Solutions"
-    }
-  ];
+const projects = [
+  {
+    num: '01',
+    title: 'BLE Wayfinding Capstone',
+    year: '2025–26',
+    tags: ['Swift', 'iOS', 'BLE', 'Accessibility'],
+    description:
+      'High-precision indoor navigation system using BLE beacons for turn-by-turn campus routing across 10+ zones. Features a Dijkstra-based safety rerouting engine (<1s reroute time), RSSI-based positioning with SwiftUI floor maps, and an admin control system for flagging danger zones and updating POIs system-wide.',
+    link: null,
+    isPrivate: false,
+    badge: 'Capstone · In Progress',
+  },
+  {
+    num: '02',
+    title: 'Wild Sky Program Application',
+    year: '2025',
+    tags: ['React', 'Node.js', 'REST APIs'],
+    description:
+      'Award-winning full-stack web application built in a team of 4 to estimate wildlife conservation incentives using multi-region environmental datasets. Designed and implemented 5+ REST API endpoints for data processing and predictions.',
+    link: 'https://devpost.com/software/wild-sky-financial-estimation-tool',
+    isPrivate: false,
+    badge: 'HackTCNJ Award Winner',
+  },
+];
+
+const ProjectRow = ({ project }) => {
+  const [open, setOpen] = useState(false);
 
   return (
-    <section id="projects" className="py-20 px-4 md:px-12 relative z-10">
-      {/* Space-themed background for readability */}
-      <div className="absolute inset-0 bg-black/85 backdrop-blur-sm"></div>
-
-      <div className="max-w-6xl mx-auto relative z-10">
-        <h2 className="text-4xl md:text-5xl font-light mb-4 text-center">Featured Projects</h2>
-        <p className="text-lg font-light text-gray-400 text-center mb-16 max-w-2xl mx-auto">
-          Exploring the intersection of technology and innovation through practical solutions
-        </p>
-
-        <div className="space-y-20">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="rounded-2xl border border-white/10 bg-white/5 hover:shadow-[0_0_20px_rgba(0,255,255,0.2)] transition-shadow duration-300 p-4 md:p-6"
-            >
-              <div className={`grid md:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'md:grid-flow-col-dense' : ''}`}>
-                <div className={`${index % 2 === 1 ? 'md:col-start-2' : ''}`}>
-                  {/* Impact Badge */}
-                  <div className="mb-4">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-light bg-green-500/20 text-green-300 border border-green-500/30">
-                      <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
-                      {project.impact}
-                    </span>
-                  </div>
-
-                  <h3 className="text-2xl md:text-3xl font-light mb-4">{project.title}</h3>
-                  <p className="text-lg font-light text-gray-300 leading-relaxed mb-6">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tags.map((tag) => (
-                      <span key={tag} className="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-sm font-light">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Project Link */}
-                  {project.isPrivate ? (
-                    <div className="flex items-center text-gray-400">
-                      <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
-                      </svg>
-                      <span className="font-light">Private Repository - Client Confidentiality</span>
-                    </div>
-                  ) : (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors duration-300 font-light"
-                    >
-                      View Project →
-                    </a>
-                  )}
-                </div>
-
-                <div className={`${index % 2 === 1 ? 'md:col-start-1' : ''}`}>
-                  <div className="aspect-video rounded-2xl overflow-hidden bg-gray-800/50 relative">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300"
-                    />
-                    {/* Image Credit */}
-                    {project.imageCredit && (
-                      <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
-                        {project.imageCredit}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
+    <div
+      style={{ borderTop: '1px solid var(--border)', cursor: 'pointer', userSelect: 'none' }}
+      onClick={() => setOpen(!open)}
+    >
+      {/* Row header */}
+      <div style={{ padding: '26px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '16px' }}>
+        <div style={{ flex: 1 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '18px', marginBottom: '10px' }}>
+            <span className="label" style={{ flexShrink: 0, minWidth: '28px' }}>{project.num}</span>
+            <span style={{ fontWeight: 400, fontSize: '15px', letterSpacing: '0.005em' }}>{project.title}</span>
+          </div>
+          <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', paddingLeft: '46px' }}>
+            {project.tags.map(tag => (
+              <span key={tag} className="label" style={{ fontSize: '10px', letterSpacing: '0.12em' }}>{tag}</span>
+            ))}
+          </div>
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexShrink: 0, paddingTop: '2px' }}>
+          <span className="label">{project.year}</span>
+          <span className="label" style={{ fontSize: '15px', lineHeight: 1, letterSpacing: 0 }}>{open ? '−' : '+'}</span>
         </div>
       </div>
-    </section>
+
+      {/* Expanded content */}
+      {open && (
+        <div style={{ paddingBottom: '28px', paddingLeft: '46px' }}>
+          <p style={{ color: 'var(--muted)', fontSize: '14px', lineHeight: 1.85, maxWidth: '500px', marginBottom: '18px' }}>
+            {project.description}
+          </p>
+          <div style={{ display: 'flex', gap: '20px', alignItems: 'center', flexWrap: 'wrap' }}>
+            <span className="label" style={{ color: 'var(--accent)', letterSpacing: '0.1em' }}>
+              {project.badge}
+            </span>
+            {!project.isPrivate && project.link && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="label"
+                onClick={e => e.stopPropagation()}
+                onMouseEnter={e => e.target.style.color = 'var(--accent)'}
+                onMouseLeave={e => e.target.style.color = 'var(--muted)'}
+              >
+                View Project ↗
+              </a>
+            )}
+            {project.isPrivate && (
+              <span className="label" style={{ color: '#333' }}>Private</span>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
   );
 };
+
+const Projects = () => (
+  <section id="work" style={{ paddingBottom: '88px', position: 'relative' }}>
+    <div style={{ position: 'absolute', inset: '-40px -24px', background: 'rgba(4,10,12,0.62)', backdropFilter: 'blur(1px)', zIndex: -1 }} />
+    <hr className="divider" style={{ marginBottom: '64px' }} />
+
+    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '8px' }}>
+      <div className="label">Selected Work</div>
+      <div className="label" style={{ fontSize: '10px', letterSpacing: '0.1em' }}>Tap to expand</div>
+    </div>
+
+    <div style={{ marginTop: '32px' }}>
+      {projects.map(p => <ProjectRow key={p.num} project={p} />)}
+      <div style={{ borderTop: '1px solid var(--border)' }} />
+    </div>
+  </section>
+);
 
 export default Projects;

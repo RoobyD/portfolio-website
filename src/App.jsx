@@ -35,7 +35,7 @@ const PROJECTS = [
 
 // ─── Timing ────────────────────────────────────────────────────────────────────
 
-const NAME         = 'Rooby Dartiny.';
+const NAME         = 'Rooby Dartiny';
 const CHAR_DUR     = 680;
 const CHAR_STAGGER = 62;
 const NAME_DONE_MS = (NAME.length - 1) * CHAR_STAGGER + CHAR_DUR + 80;
@@ -394,34 +394,38 @@ export default function App() {
   }, [view]);
 
   return (
-    <>
-      {/* Scrollable viewport container */}
-      <div ref={scrollRef} style={{ position: 'fixed', inset: 0, overflowY: 'auto', background: '#000' }}>
+    <div style={{ position: 'fixed', inset: 0, display: 'flex', flexDirection: 'column', background: '#000' }}>
 
-        {/* Fixed background gradient — doesn't scroll */}
-        <div aria-hidden="true" style={{
-          position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 0,
-          background: 'radial-gradient(ellipse 85vw 70vh at 50% 44%, rgba(18,6,38,0.65) 0%, transparent 72%)',
-        }} />
+      {/* Fixed background gradient */}
+      <div aria-hidden="true" style={{
+        position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 0,
+        background: 'radial-gradient(ellipse 85vw 70vh at 50% 44%, rgba(18,6,38,0.65) 0%, transparent 72%)',
+      }} />
 
-        {/* Sticky header — reacts to scroll */}
-        <header style={{
-          position: 'sticky', top: 0, zIndex: 50,
-          padding: '8px 26px',
-          background: scrolled ? 'rgba(4,10,20,0.60)' : 'transparent',
-          backdropFilter: scrolled ? 'blur(14px)' : 'none',
-          borderBottom: `1px solid ${scrolled ? 'rgba(255,255,255,0.07)' : 'transparent'}`,
-          transition: 'background 0.3s, border-color 0.3s, backdrop-filter 0.3s',
-        }}>
-          <RLogo onHome={() => navigate('home')} />
-        </header>
+      {/* Header — reacts to scroll */}
+      <header style={{
+        flexShrink: 0, zIndex: 50,
+        padding: '8px 26px',
+        background: scrolled ? 'rgba(4,10,20,0.60)' : 'transparent',
+        backdropFilter: scrolled ? 'blur(14px)' : 'none',
+        borderBottom: `1px solid ${scrolled ? 'rgba(255,255,255,0.07)' : 'transparent'}`,
+        transition: 'background 0.3s, border-color 0.3s, backdrop-filter 0.3s',
+      }}>
+        <RLogo onHome={() => navigate('home')} />
+      </header>
 
-        {/* Center content — crossfades on view change */}
+      {/* Scrollable content — fills remaining space */}
+      <div
+        ref={scrollRef}
+        style={{
+          flex: 1, overflowY: 'auto', position: 'relative', zIndex: 10,
+          display: 'flex', flexDirection: 'column',
+        }}
+      >
         <div style={{
-          position: 'relative', zIndex: 10,
-          minHeight: 'calc(100vh - 100px)',
+          flex: 1,
           display: 'flex', alignItems: 'center', justifyContent: 'center',
-          padding: '32px 24px 100px',
+          padding: '32px 24px 48px',
           opacity: fading ? 0 : 1,
           transform: fading ? 'translateY(10px)' : 'translateY(0)',
           transition: 'opacity 0.24s ease, transform 0.24s ease',
@@ -461,33 +465,49 @@ export default function App() {
           {view === 'resume'  && <ResumeView />}
           {view === 'contact' && <ContactView />}
         </div>
-
       </div>
 
-      {/* Bottom nav — fixed to viewport, always visible */}
-      <nav style={{
-        position: 'fixed', bottom: '36px', left: 0, right: 0, zIndex: 50,
-        display: 'flex', justifyContent: 'center', gap: '36px',
+      {/* Bottom bar: nav + footer — mirrors header blur technique */}
+      <div style={{
+        flexShrink: 0, zIndex: 50,
+        background: scrolled ? 'rgba(4,10,20,0.60)' : 'transparent',
+        backdropFilter: scrolled ? 'blur(14px)' : 'none',
+        borderTop: `1px solid ${scrolled ? 'rgba(255,255,255,0.07)' : 'transparent'}`,
+        transition: 'background 0.3s, border-color 0.3s, backdrop-filter 0.3s',
+        padding: '12px 0 14px',
       }}>
-        {NAV.map(({ key, label }) => (
-          <button
-            key={key}
-            onClick={() => navigate(key)}
-            style={{
-              background: 'none', border: 'none', padding: '6px 0',
-              cursor: 'pointer',
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: '12px', letterSpacing: '0.18em', textTransform: 'uppercase',
-              color: view === key ? 'rgba(212,175,122,0.88)' : 'rgba(255,255,255,0.2)',
-              transition: 'color 0.2s',
-            }}
-            onMouseEnter={e => { if (view !== key) e.currentTarget.style.color = 'rgba(255,255,255,0.5)'; }}
-            onMouseLeave={e => { if (view !== key) e.currentTarget.style.color = 'rgba(255,255,255,0.2)'; }}
-          >
-            {label}
-          </button>
-        ))}
-      </nav>
-    </>
+        <nav style={{ display: 'flex', justifyContent: 'center', gap: '36px', marginBottom: '10px' }}>
+          {NAV.map(({ key, label }) => (
+            <button
+              key={key}
+              onClick={() => navigate(key)}
+              style={{
+                background: 'none', border: 'none', padding: '6px 0',
+                cursor: 'pointer',
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: '12px', letterSpacing: '0.18em', textTransform: 'uppercase',
+                color: view === key ? 'rgba(212,175,122,0.88)' : 'rgba(255,255,255,0.2)',
+                transition: 'color 0.2s',
+              }}
+              onMouseEnter={e => { if (view !== key) e.currentTarget.style.color = 'rgba(255,255,255,0.5)'; }}
+              onMouseLeave={e => { if (view !== key) e.currentTarget.style.color = 'rgba(255,255,255,0.2)'; }}
+            >
+              {label}
+            </button>
+          ))}
+        </nav>
+
+        <footer style={{
+          textAlign: 'center',
+          fontFamily: "'JetBrains Mono', monospace",
+          fontSize: '10px', letterSpacing: '0.12em',
+          color: 'rgba(255,255,255,0.32)',
+          userSelect: 'none',
+        }}>
+          © 2026 Rooby Dartiny. All rights reserved.
+        </footer>
+      </div>
+
+    </div>
   );
 }

@@ -92,12 +92,11 @@ function RLogo({ onHome }) {
       <button
         onClick={onHome}
         style={{
-          position: 'absolute', top: '16px', left: '26px', zIndex: 100,
           background: 'none', border: 'none', padding: 0,
           cursor: 'pointer', userSelect: 'none',
           fontFamily: "'Cormorant Garamond', Georgia, serif",
           fontStyle: 'italic', fontWeight: 300,
-          fontSize: '92px',
+          fontSize: '72px',
           color: 'rgba(230,218,198,0.93)',
           letterSpacing: '0.02em', lineHeight: 1,
           display: 'block',
@@ -119,8 +118,8 @@ function WorkView() {
     <div style={{ width: 'min(860px, 92vw)' }}>
       <p style={{
         fontFamily: "'JetBrains Mono', monospace",
-        fontSize: '8px', letterSpacing: '0.3em', textTransform: 'uppercase',
-        color: '#2a2a2a', marginBottom: '24px',
+        fontSize: '11px', letterSpacing: '0.25em', textTransform: 'uppercase',
+        color: 'rgba(255,255,255,0.22)', marginBottom: '24px',
         opacity: 0, animation: 'viewIn 0.5s ease 0ms both',
       }}>Selected Work</p>
 
@@ -157,14 +156,14 @@ function WorkView() {
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '18px' }}>
                 <span style={{
                   fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: '8px', letterSpacing: '0.2em',
-                  color: isHov ? 'rgba(212,175,122,0.5)' : '#252525',
+                  fontSize: '11px', letterSpacing: '0.2em',
+                  color: isHov ? 'rgba(212,175,122,0.5)' : 'rgba(255,255,255,0.18)',
                   transition: 'color 0.22s',
                 }}>{p.num}</span>
                 {p.href && (
                   <span style={{
-                    fontSize: '12px',
-                    color: isHov ? 'rgba(212,175,122,0.7)' : '#2a2a2a',
+                    fontSize: '16px',
+                    color: isHov ? 'rgba(212,175,122,0.7)' : 'rgba(255,255,255,0.18)',
                     transition: 'color 0.22s',
                   }}>↗</span>
                 )}
@@ -183,7 +182,7 @@ function WorkView() {
               {/* Description */}
               {p.desc && (
                 <p style={{
-                  fontSize: '11px', fontWeight: 300, color: '#3a3a3a',
+                  fontSize: '13px', fontWeight: 300, color: 'rgba(255,255,255,0.38)',
                   lineHeight: 1.7, letterSpacing: '0.01em',
                   marginBottom: '20px', flex: 1,
                 }}>{p.desc}</p>
@@ -195,10 +194,10 @@ function WorkView() {
                   {p.tags.split(' · ').map(tag => (
                     <span key={tag} style={{
                       fontFamily: "'JetBrains Mono', monospace",
-                      fontSize: '7px', letterSpacing: '0.15em', textTransform: 'uppercase',
-                      color: '#2a2a2a',
-                      border: '1px solid rgba(255,255,255,0.05)',
-                      padding: '3px 8px',
+                      fontSize: '10px', letterSpacing: '0.12em', textTransform: 'uppercase',
+                      color: 'rgba(255,255,255,0.22)',
+                      border: '1px solid rgba(255,255,255,0.08)',
+                      padding: '4px 10px',
                     }}>{tag}</span>
                   ))}
                 </div>
@@ -220,7 +219,7 @@ function ResumeView() {
 
   const btnBase = {
     fontFamily: "'JetBrains Mono', monospace",
-    fontSize: '9px', letterSpacing: '0.25em', textTransform: 'uppercase',
+    fontSize: '12px', letterSpacing: '0.2em', textTransform: 'uppercase',
     padding: '13px 32px',
     display: 'inline-block',
     transition: 'color 0.22s, border-color 0.22s',
@@ -231,8 +230,8 @@ function ResumeView() {
     <div style={{ textAlign: 'center', opacity: 0, animation: 'viewIn 0.5s ease 0ms both', width: 'min(900px, 92vw)' }}>
       <p style={{
         fontFamily: "'JetBrains Mono', monospace",
-        fontSize: '8px', letterSpacing: '0.3em', textTransform: 'uppercase',
-        color: '#2a2a2a', marginBottom: '22px',
+        fontSize: '11px', letterSpacing: '0.25em', textTransform: 'uppercase',
+        color: 'rgba(255,255,255,0.22)', marginBottom: '22px',
       }}>Curriculum Vitae</p>
       <h2 style={{
         fontFamily: "'Cormorant Garamond', Georgia, serif",
@@ -295,8 +294,8 @@ function ContactView() {
     <div style={{ width: 'min(300px, 88vw)' }}>
       <p style={{
         fontFamily: "'JetBrains Mono', monospace",
-        fontSize: '8px', letterSpacing: '0.3em', textTransform: 'uppercase',
-        color: '#2a2a2a', marginBottom: '8px',
+        fontSize: '11px', letterSpacing: '0.25em', textTransform: 'uppercase',
+        color: 'rgba(255,255,255,0.22)', marginBottom: '8px',
         opacity: 0, animation: 'viewIn 0.5s ease 0ms both',
       }}>Connect</p>
       {LINKS.map((link, i) => (
@@ -317,13 +316,13 @@ function ContactView() {
           }}
         >
           <span style={{
-            fontSize: '13px', fontWeight: 300, letterSpacing: '0.02em',
-            color: hov === link.label ? '#c8c8c8' : '#505050',
+            fontSize: '17px', fontWeight: 300, letterSpacing: '0.02em',
+            color: hov === link.label ? '#c8c8c8' : 'rgba(255,255,255,0.32)',
             transition: 'color 0.2s',
           }}>{link.label}</span>
           <span style={{
-            fontSize: '9px',
-            color: hov === link.label ? '#888' : '#282828',
+            fontSize: '14px',
+            color: hov === link.label ? '#888' : 'rgba(255,255,255,0.2)',
             transition: 'color 0.2s, transform 0.2s',
             transform: hov === link.label ? 'translate(2px,-2px)' : 'translate(0,0)',
             display: 'inline-block',
@@ -348,7 +347,17 @@ export default function App() {
   const [revealKey, setRevealKey] = useState(0);
   const [showRule,  setShowRule]  = useState(false);
   const [showSub,   setShowSub]   = useState(false);
-  const timers = useRef([]);
+  const [scrolled,  setScrolled]  = useState(false);
+  const timers    = useRef([]);
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const onScroll = () => setScrolled(el.scrollTop > 30);
+    el.addEventListener('scroll', onScroll);
+    return () => el.removeEventListener('scroll', onScroll);
+  }, []);
 
   const clearAll = () => {
     timers.current.forEach(clearTimeout);
@@ -385,65 +394,79 @@ export default function App() {
   }, [view]);
 
   return (
-    <div style={{ position: 'fixed', inset: 0, overflow: 'hidden', background: '#000' }}>
+    <>
+      {/* Scrollable viewport container */}
+      <div ref={scrollRef} style={{ position: 'fixed', inset: 0, overflowY: 'auto', background: '#000' }}>
 
-      {/* Background depth */}
-      <div aria-hidden="true" style={{
-        position: 'absolute', inset: 0, pointerEvents: 'none',
-        background: 'radial-gradient(ellipse 85vw 70vh at 50% 44%, rgba(18,6,38,0.65) 0%, transparent 72%)',
-      }} />
+        {/* Fixed background gradient — doesn't scroll */}
+        <div aria-hidden="true" style={{
+          position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 0,
+          background: 'radial-gradient(ellipse 85vw 70vh at 50% 44%, rgba(18,6,38,0.65) 0%, transparent 72%)',
+        }} />
 
-      {/* R — clicking always returns home */}
-      <RLogo onHome={() => navigate('home')} />
+        {/* Sticky header — reacts to scroll */}
+        <header style={{
+          position: 'sticky', top: 0, zIndex: 50,
+          padding: '8px 26px',
+          background: scrolled ? 'rgba(4,10,20,0.60)' : 'transparent',
+          backdropFilter: scrolled ? 'blur(14px)' : 'none',
+          borderBottom: `1px solid ${scrolled ? 'rgba(255,255,255,0.07)' : 'transparent'}`,
+          transition: 'background 0.3s, border-color 0.3s, backdrop-filter 0.3s',
+        }}>
+          <RLogo onHome={() => navigate('home')} />
+        </header>
 
-      {/* Center content — crossfades on view change */}
-      <div style={{
-        position: 'absolute', inset: 0,
-        display: 'flex', alignItems: 'center', justifyContent: 'center',
-        paddingBottom: '8vh',
-        opacity: fading ? 0 : 1,
-        transform: fading ? 'translateY(10px)' : 'translateY(0)',
-        transition: 'opacity 0.24s ease, transform 0.24s ease',
-        pointerEvents: fading ? 'none' : 'auto',
-      }}>
-        {view === 'home' && (
-          <div
-            onMouseEnter={handleHover}
-            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', cursor: 'default' }}
-          >
-            <NameReveal key={revealKey} revealKey={revealKey} onDone={handleNameDone} />
+        {/* Center content — crossfades on view change */}
+        <div style={{
+          position: 'relative', zIndex: 10,
+          minHeight: 'calc(100vh - 100px)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          padding: '32px 24px 100px',
+          opacity: fading ? 0 : 1,
+          transform: fading ? 'translateY(10px)' : 'translateY(0)',
+          transition: 'opacity 0.24s ease, transform 0.24s ease',
+          pointerEvents: fading ? 'none' : 'auto',
+        }}>
+          {view === 'home' && (
+            <div
+              onMouseEnter={handleHover}
+              style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', cursor: 'default' }}
+            >
+              <NameReveal key={revealKey} revealKey={revealKey} onDone={handleNameDone} />
 
-            <div aria-hidden="true" style={{
-              marginTop: '24px', width: '200px', height: '1px',
-              background: 'rgba(255,255,255,0.1)',
-              transformOrigin: 'left center',
-              transform:  showRule ? 'scaleX(1)' : 'scaleX(0)',
-              transition: showRule ? 'transform 0.65s cubic-bezier(0.4,0,0.2,1)' : 'none',
-            }} />
+              <div aria-hidden="true" style={{
+                marginTop: '24px', width: '200px', height: '1px',
+                background: 'rgba(255,255,255,0.1)',
+                transformOrigin: 'left center',
+                transform:  showRule ? 'scaleX(1)' : 'scaleX(0)',
+                transition: showRule ? 'transform 0.65s cubic-bezier(0.4,0,0.2,1)' : 'none',
+              }} />
 
-            <div style={{
-              marginTop: '16px',
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: '10px', letterSpacing: '0.3em', textTransform: 'uppercase',
-              color: 'rgba(255,255,255,0.22)',
-              opacity:   showSub ? 1 : 0,
-              transform: showSub ? 'translateY(0)' : 'translateY(6px)',
-              transition: showSub ? 'opacity 0.9s ease, transform 0.9s ease' : 'none',
-              userSelect: 'none', whiteSpace: 'nowrap',
-            }}>
-              Software Engineer &nbsp;·&nbsp; Builder
+              <div style={{
+                marginTop: '16px',
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: '13px', letterSpacing: '0.25em', textTransform: 'uppercase',
+                color: 'rgba(255,255,255,0.22)',
+                opacity:   showSub ? 1 : 0,
+                transform: showSub ? 'translateY(0)' : 'translateY(6px)',
+                transition: showSub ? 'opacity 0.9s ease, transform 0.9s ease' : 'none',
+                userSelect: 'none', whiteSpace: 'nowrap',
+              }}>
+                Software Engineer &nbsp;·&nbsp; Builder
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {view === 'work'    && <WorkView />}
-        {view === 'resume'  && <ResumeView />}
-        {view === 'contact' && <ContactView />}
+          {view === 'work'    && <WorkView />}
+          {view === 'resume'  && <ResumeView />}
+          {view === 'contact' && <ContactView />}
+        </div>
+
       </div>
 
-      {/* Bottom nav — always visible */}
+      {/* Bottom nav — fixed to viewport, always visible */}
       <nav style={{
-        position: 'absolute', bottom: '36px', left: 0, right: 0,
+        position: 'fixed', bottom: '36px', left: 0, right: 0, zIndex: 50,
         display: 'flex', justifyContent: 'center', gap: '36px',
       }}>
         {NAV.map(({ key, label }) => (
@@ -454,7 +477,7 @@ export default function App() {
               background: 'none', border: 'none', padding: '6px 0',
               cursor: 'pointer',
               fontFamily: "'JetBrains Mono', monospace",
-              fontSize: '9px', letterSpacing: '0.22em', textTransform: 'uppercase',
+              fontSize: '12px', letterSpacing: '0.18em', textTransform: 'uppercase',
               color: view === key ? 'rgba(212,175,122,0.88)' : 'rgba(255,255,255,0.2)',
               transition: 'color 0.2s',
             }}
@@ -465,7 +488,6 @@ export default function App() {
           </button>
         ))}
       </nav>
-
-    </div>
+    </>
   );
 }
